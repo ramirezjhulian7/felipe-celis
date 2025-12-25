@@ -85,7 +85,7 @@ const Contact = () => {
           >
             <a 
               href={`mailto:${personalInfo.email}`}
-              className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-gold text-black font-bold text-lg rounded-full hover:shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 group"
+              className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-gold text-primary font-bold text-lg rounded-full hover:shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 group"
             >
               <Send className="group-hover:translate-x-1 transition-transform" size={24} />
               Send a Message

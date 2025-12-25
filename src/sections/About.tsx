@@ -111,8 +111,8 @@ const About = () => {
                     viewport={{ once: true }}
                     className="flex justify-between items-center border-b border-accent/20 pb-3 hover:border-accent/50 transition-colors group"
                   >
-                    <span className="text-lg text-gray-300 group-hover:text-white transition-colors">{lang.language}</span>
-                    <span className="px-3 py-1 bg-gradient-gold text-black text-sm font-semibold rounded-full">
+                    <span className="text-lg text-gray-200 group-hover:text-white transition-colors">{lang.language}</span>
+                    <span className="px-3 py-1 bg-gradient-gold text-primary text-sm font-semibold rounded-full">
                       {lang.level}
                     </span>
                   </motion.div>

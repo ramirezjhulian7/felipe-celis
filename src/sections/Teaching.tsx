@@ -54,9 +54,9 @@ const Teaching = () => {
                     className="border-l-2 border-accent pl-4 hover:border-accent-light transition-colors"
                   >
                     <h4 className="text-xl font-semibold text-white">{edu.degree}</h4>
-                    <p className="text-gray-400 text-sm mt-1">{edu.institution}, {edu.location}</p>
+                    <p className="text-gray-300 text-sm mt-1">{edu.institution}, {edu.location}</p>
                     <p className="text-accent text-sm font-semibold">{edu.year}</p>
-                    {edu.details && <p className="text-gray-500 text-sm mt-2 italic">{edu.details}</p>}
+                    {edu.details && <p className="text-gray-300 text-sm mt-2 italic">{edu.details}</p>}
                   </motion.div>
                 ))}
               </div>
@@ -87,7 +87,7 @@ const Teaching = () => {
                     <h4 className="text-xl font-semibold text-white group-hover:text-accent transition-colors">
                       {exp.role}
                     </h4>
-                    <p className="text-gray-400 text-sm mb-2">{exp.institution} | {exp.period}</p>
+                    <p className="text-gray-300 text-sm mb-2">{exp.institution} | {exp.period}</p>
                     {exp.details && (
                       <ul className="list-disc list-inside text-gray-300 text-sm space-y-1 mt-2">
                         {exp.details.map((detail, idx) => (
@@ -125,7 +125,7 @@ const Teaching = () => {
                 </h5>
                 <ul className="space-y-2">
                   {teaching.syllabus.objectives.slice(0, 3).map((obj, i) => (
-                    <li key={i} className="text-gray-400 text-sm flex items-start gap-2">
+                    <li key={i} className="text-gray-200 text-sm flex items-start gap-2">
                       <span className="text-accent mt-1">•</span>
                       <span>{obj}</span>
                     </li>
@@ -149,7 +149,7 @@ const Teaching = () => {
                       className="border-l-2 border-accent/50 pl-4 hover:border-accent transition-colors"
                     >
                       <h5 className="font-semibold text-accent text-sm">{artifact.title}</h5>
-                      <p className="text-gray-400 text-xs mt-1">{artifact.description}</p>
+                      <p className="text-gray-200 text-xs mt-1">{artifact.description}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -181,7 +181,7 @@ const Teaching = () => {
                     <h5 className="font-bold text-white text-sm mb-1 group-hover:text-accent transition-colors">
                       {assign.title}
                     </h5>
-                    <p className="text-gray-400 text-xs">{assign.description}</p>
+                    <p className="text-gray-200 text-xs">{assign.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -223,7 +223,7 @@ const Teaching = () => {
                     className="flex flex-col hover:bg-glass p-3 -mx-3 rounded-lg transition-all duration-300"
                   >
                     <span className="font-bold text-accent text-sm">{award.title}</span>
-                    <span className="text-gray-400 text-xs mt-1">{award.organization} | {award.year}</span>
+                    <span className="text-gray-300 text-xs mt-1">{award.organization} | {award.year}</span>
                   </motion.div>
                 ))}
               </div>
