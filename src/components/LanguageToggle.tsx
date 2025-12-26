@@ -8,7 +8,8 @@ const LanguageToggle = () => {
     return (
         <motion.button
             onClick={toggleLanguage}
-            className="fixed top-6 right-6 z-50 glass-strong rounded-full p-3 border-2 border-accent/30 hover:border-accent transition-all duration-300 hover:scale-110 group"
+            className="z-50 glass-strong rounded-full p-3 border-2 border-accent/30 hover:border-accent transition-all duration-300 hover:scale-110 group"
+            style={{ position: 'fixed', top: '1.5rem', right: '1.5rem' }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -20 }}

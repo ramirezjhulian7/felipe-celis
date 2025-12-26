@@ -61,6 +61,13 @@ export default {
       },
       backdropBlur: {
         xs: '2px',
+        '3xl': '40px',
+        '4xl': '60px',
+      },
+      boxShadow: {
+        'liquid': '0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
+        'liquid-strong': '0 12px 40px 0 rgba(0, 0, 0, 0.4), 0 2px 8px 0 rgba(0, 0, 0, 0.2), inset 0 1px 2px 0 rgba(255, 255, 255, 0.15)',
+        'liquid-glow': '0 0 20px rgba(212, 175, 55, 0.3), 0 8px 32px rgba(0, 0, 0, 0.3)',
       },
     },
   },
