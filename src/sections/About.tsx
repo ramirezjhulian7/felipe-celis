@@ -1,20 +1,26 @@
 import { motion } from 'framer-motion';
-import { personalInfo, skills } from '../data/content';
 import { ParallaxLayer } from '../components/ParallaxLayer';
 import { Sparkles, Award, Globe } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations, contentTranslations } from '../data/translations';
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = translations[language].about;
+  const personalInfo = contentTranslations[language].personalInfo;
+  const skills = contentTranslations[language].skills;
+
   return (
     <section id="about" className="py-32 bg-gradient-to-b from-secondary via-primary to-secondary text-white relative overflow-hidden">
       {/* Parallax background elements */}
       <ParallaxLayer speed={0.2} className="absolute top-20 right-10 opacity-5">
         <Sparkles size={200} className="text-accent" />
       </ParallaxLayer>
-      
+
       <ParallaxLayer speed={0.15} className="absolute bottom-20 left-10 opacity-5">
         <Globe size={180} className="text-accent-light" />
       </ParallaxLayer>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,11 +29,11 @@ const About = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-5xl font-bold mb-4 text-center bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
-            About Me
+            {t.title}
           </h2>
           <div className="h-1 w-32 bg-gradient-gold mx-auto mb-16 rounded-full" />
         </motion.div>
-        
+
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
           {/* Bio Card */}
           <motion.div
@@ -39,13 +45,13 @@ const About = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <Award className="text-accent group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="text-2xl font-bold text-white">Background</h3>
+              <h3 className="text-2xl font-bold text-white">{t.background}</h3>
             </div>
             <p className="text-lg leading-relaxed text-gray-300">
               {personalInfo.bio}
             </p>
           </motion.div>
-          
+
           {/* Philosophy Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -56,7 +62,7 @@ const About = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <Sparkles className="text-accent group-hover:rotate-12 transition-transform" size={32} />
-              <h3 className="text-2xl font-bold text-accent">Teaching Philosophy</h3>
+              <h3 className="text-2xl font-bold text-accent">{t.philosophy}</h3>
             </div>
             <p className="text-lg leading-relaxed text-gray-300">
               {personalInfo.philosophy}
@@ -77,7 +83,7 @@ const About = () => {
             <div className="glass rounded-2xl p-8">
               <h3 className="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
                 <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                Core Skills
+                {t.coreSkills}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {[...skills.pedagogical, ...skills.technical].map((skill, i) => (
@@ -94,12 +100,12 @@ const About = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* Languages */}
             <div className="glass rounded-2xl p-8">
               <h3 className="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
                 <Globe className="text-accent" size={24} />
-                Languages
+                {t.languages}
               </h3>
               <div className="space-y-4">
                 {skills.languages.map((lang, i) => (

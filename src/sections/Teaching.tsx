@@ -1,20 +1,28 @@
 import { motion } from 'framer-motion';
-import { teaching, experience, education, awards, signatureAssignments } from '../data/content';
 import { ParallaxLayer } from '../components/ParallaxLayer';
 import { BookOpen, Award, Briefcase, GraduationCap, Lightbulb, Star } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations, contentTranslations } from '../data/translations';
 
 const Teaching = () => {
+  const { language } = useLanguage();
+  const t = translations[language].teaching;
+  const teaching = contentTranslations[language].teaching;
+  const experience = contentTranslations[language].experience;
+  const education = contentTranslations[language].education;
+  const awards = contentTranslations[language].awards;
+  const signatureAssignments = contentTranslations[language].signatureAssignments;
   return (
     <section id="teaching" className="py-32 bg-gradient-to-b from-primary via-secondary to-primary text-white relative overflow-hidden">
       {/* Parallax background elements */}
       <ParallaxLayer speed={0.25} className="absolute top-40 left-5 opacity-5">
         <BookOpen size={160} className="text-accent" />
       </ParallaxLayer>
-      
+
       <ParallaxLayer speed={0.18} className="absolute bottom-40 right-10 opacity-5">
         <GraduationCap size={180} className="text-accent-light" />
       </ParallaxLayer>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,11 +31,11 @@ const Teaching = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-5xl font-bold mb-4 text-center bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
-            Academic Portfolio
+            {t.title}
           </h2>
           <div className="h-1 w-32 bg-gradient-gold mx-auto mb-16 rounded-full" />
         </motion.div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
           {/* Left Column */}
           <div className="space-y-12">
@@ -41,7 +49,7 @@ const Teaching = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <GraduationCap className="text-accent" size={32} />
-                <h3 className="text-3xl font-bold">Education</h3>
+                <h3 className="text-3xl font-bold">{t.education}</h3>
               </div>
               <div className="space-y-6">
                 {education.map((edu, index) => (
@@ -72,7 +80,7 @@ const Teaching = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Briefcase className="text-accent" size={32} />
-                <h3 className="text-3xl font-bold">Experience</h3>
+                <h3 className="text-3xl font-bold">{t.experience}</h3>
               </div>
               <div className="space-y-6">
                 {experience.map((exp, index) => (
@@ -113,15 +121,15 @@ const Teaching = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <BookOpen className="text-accent" size={32} />
-                <h3 className="text-3xl font-bold">Teaching Focus</h3>
+                <h3 className="text-3xl font-bold">{t.teachingFocus}</h3>
               </div>
-              
+
               <div className="mb-6 p-6 glass rounded-xl">
                 <h4 className="text-2xl font-semibold text-accent mb-3">{teaching.syllabus.title}</h4>
                 <p className="text-gray-300 mb-4 text-sm leading-relaxed">{teaching.syllabus.description}</p>
                 <h5 className="font-bold text-white mb-3 text-sm flex items-center gap-2">
                   <Star className="text-accent" size={16} />
-                  Key Objectives:
+                  {t.keyObjectives}
                 </h5>
                 <ul className="space-y-2">
                   {teaching.syllabus.objectives.slice(0, 3).map((obj, i) => (
@@ -136,7 +144,7 @@ const Teaching = () => {
               <div>
                 <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                   <Lightbulb className="text-accent" size={24} />
-                  Teaching Artifacts
+                  {t.teachingArtifacts}
                 </h4>
                 <div className="space-y-3">
                   {teaching.artifacts.map((artifact, index) => (
@@ -166,7 +174,7 @@ const Teaching = () => {
             >
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
                 <Award className="text-accent" size={28} />
-                Signature Assignments
+                {t.signatureAssignments}
               </h3>
               <div className="grid gap-4">
                 {signatureAssignments.map((assign, index) => (
@@ -195,7 +203,7 @@ const Teaching = () => {
               viewport={{ once: true }}
               className="bg-gradient-to-br from-accent/10 via-secondary to-primary glass-strong rounded-2xl p-8 border border-accent/30"
             >
-              <h3 className="text-xl font-semibold text-white mb-3">Innovative Coursework</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{t.innovativeCourse}</h3>
               <h5 className="font-bold text-2xl mb-3 text-accent">{teaching.rapCourse.title}</h5>
               <p className="text-gray-300 text-sm leading-relaxed">{teaching.rapCourse.description}</p>
             </motion.div>
@@ -210,7 +218,7 @@ const Teaching = () => {
             >
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
                 <Star className="text-accent" size={28} />
-                Awards & Honors
+                {t.awards}
               </h3>
               <div className="space-y-4">
                 {awards.map((award, index) => (

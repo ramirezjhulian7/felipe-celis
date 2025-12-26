@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion';
-import { personalInfo } from '../data/content';
 import { ParallaxLayer } from '../components/ParallaxLayer';
 import { Music } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations, contentTranslations } from '../data/translations';
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = translations[language].hero;
+  const personalInfo = contentTranslations[language].personalInfo;
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
       {/* Animated gradient background */}
@@ -11,20 +16,20 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary">
           <div className="absolute inset-0 bg-gradient-to-t from-accent/20 via-transparent to-transparent" />
         </div>
-        
+
         {/* Parallax decorative elements */}
         <ParallaxLayer speed={0.3} className="absolute top-20 left-10 opacity-20">
           <Music size={80} className="text-accent" />
         </ParallaxLayer>
-        
+
         <ParallaxLayer speed={0.5} className="absolute bottom-32 right-20 opacity-10">
           <Music size={120} className="text-accent-light" />
         </ParallaxLayer>
-        
+
         <ParallaxLayer speed={0.4} className="absolute top-1/3 right-1/4 opacity-15">
           <div className="w-32 h-32 rounded-full bg-gradient-gold opacity-30 blur-3xl" />
         </ParallaxLayer>
-        
+
         <ParallaxLayer speed={0.2} className="absolute bottom-1/4 left-1/4 opacity-15">
           <div className="w-40 h-40 rounded-full bg-accent/20 blur-3xl" />
         </ParallaxLayer>
@@ -46,15 +51,15 @@ const Hero = () => {
             className="mb-6"
           >
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-accent/50 shadow-xl shadow-accent/20">
-              <img 
-                src="/felipe_celis.jpg" 
+              <img
+                src="/felipe_celis.jpg"
                 alt={personalInfo.name}
                 className="w-full h-full object-cover"
               />
             </div>
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -62,15 +67,15 @@ const Hero = () => {
           >
             {personalInfo.name}
           </motion.h1>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
             className="h-1 w-24 bg-gradient-gold mx-auto mb-6 rounded-full"
           />
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.8 }}
@@ -78,28 +83,28 @@ const Hero = () => {
           >
             {personalInfo.title}
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.8 }}
             className="flex gap-4 justify-center flex-wrap"
           >
-            <a 
+            <a
               href="#teaching"
               className="px-6 md:px-8 py-3 bg-gradient-to-r from-accent to-accent-light text-primary font-bold rounded-full hover:shadow-lg hover:shadow-accent/50 transition-all duration-300 hover:scale-105 text-sm md:text-base"
             >
-              View Teaching Portfolio
+              {t.viewPortfolio}
             </a>
-            <a 
+            <a
               href="#contact"
               className="px-6 md:px-8 py-3 glass-strong border-2 border-accent text-accent font-bold rounded-full hover:bg-accent hover:text-primary transition-all duration-300 hover:scale-105 text-sm md:text-base"
             >
-              Get in Touch
+              {t.getInTouch}
             </a>
           </motion.div>
         </motion.div>
-        
+
         {/* Scroll indicator - moved further down */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -108,16 +113,16 @@ const Hero = () => {
           className="absolute -bottom-4 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center gap-2 text-accent/60 animate-bounce">
-            <span className="text-sm font-light">Scroll</span>
-            <svg 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
+            <span className="text-sm font-light">{t.scroll}</span>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
               strokeWidth="2"
             >
-              <path d="M12 5v14M19 12l-7 7-7-7"/>
+              <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
           </div>
         </motion.div>
