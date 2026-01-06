@@ -10,7 +10,7 @@ const Research = () => {
   const research = contentTranslations[language].research;
 
   return (
-    <section id="research" className="py-32 bg-gradient-to-b from-primary via-secondary to-primary text-white relative overflow-hidden">
+    <section id="research" data-research-section className="py-32 bg-gradient-to-b from-primary via-secondary to-primary text-white relative overflow-hidden">
       {/* Parallax background elements */}
       <ParallaxLayer speed={0.2} className="absolute top-20 left-10 opacity-5">
         <BookOpen size={180} className="text-accent" />
@@ -147,18 +147,19 @@ const Research = () => {
               {research.conferencePresentations.map((presentation, index) => (
                 <motion.div
                   key={index}
+                  data-conference
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
                   viewport={{ once: true }}
                   className="border-l-2 border-accent pl-6 hover:border-accent-light transition-colors"
                 >
-                  <h4 className="text-xl font-semibold text-white mb-2">{presentation.title}</h4>
-                  <div className="text-sm text-gray-300 mb-3">
+                  <h4 data-conf-title className="text-xl font-semibold text-white mb-2">{presentation.title}</h4>
+                  <div data-conf-event className="text-sm text-gray-300 mb-3">
                     <p className="italic">{presentation.conference}</p>
                     <p>{presentation.location} | {presentation.year}</p>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">{presentation.abstract}</p>
+                  <p data-conf-description className="text-gray-300 leading-relaxed">{presentation.abstract}</p>
                 </motion.div>
               ))}
             </div>

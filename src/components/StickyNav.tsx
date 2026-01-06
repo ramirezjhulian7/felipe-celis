@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
+import { usePDFExport } from '../hooks/usePDFExport';
 
 const StickyNav = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
   const { language } = useLanguage();
   const t = translations[language].nav;
+  const tPdf = translations[language].pdf;
+  const { exportToPDF } = usePDFExport();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +36,17 @@ const StickyNav = () => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handlePDFExport = async () => {
+    setIsExporting(true);
+    try {
+      await exportToPDF();
+    } catch (error) {
+      console.error('PDF export failed:', error);
+    } finally {
+      setIsExporting(false);
     }
   };
 
@@ -70,6 +85,18 @@ const StickyNav = () => {
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
                   </button>
                 ))}
+                
+                {/* PDF Export Button */}
+                <button
+                  onClick={handlePDFExport}
+                  disabled={isExporting}
+                  className="flex items-center gap-2 px-4 py-2 bg-accent/10 hover:bg-accent/20 text-accent border border-accent/30 rounded-full transition-all text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  title={tPdf.export}
+                  aria-label={tPdf.export}
+                >
+                  <Download size={16} className={isExporting ? 'animate-bounce' : ''} />
+                  <span>{isExporting ? tPdf.downloading : tPdf.export}</span>
+                </button>
               </div>
 
               {/* Mobile Menu Button */}
@@ -105,6 +132,17 @@ const StickyNav = () => {
                       {item.label}
                     </button>
                   ))}
+                  
+                  {/* PDF Export Button for Mobile */}
+                  <button
+                    onClick={handlePDFExport}
+                    disabled={isExporting}
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-accent/10 hover:bg-accent/20 text-accent border border-accent/30 rounded-lg transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label={tPdf.export}
+                  >
+                    <Download size={18} className={isExporting ? 'animate-bounce' : ''} />
+                    <span>{isExporting ? tPdf.downloading : tPdf.export}</span>
+                  </button>
                 </div>
               </motion.div>
             )}

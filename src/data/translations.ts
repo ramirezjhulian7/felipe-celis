@@ -47,6 +47,11 @@ export const translations = {
             location: "Location",
             sendMessage: "Send a Message",
             copyright: "All rights reserved."
+        },
+        pdf: {
+            export: "Export PDF",
+            downloading: "Generating PDF...",
+            generated: "from"
         }
     },
     es: {
@@ -97,6 +102,11 @@ export const translations = {
             location: "Ubicación",
             sendMessage: "Enviar Mensaje",
             copyright: "Todos los derechos reservados."
+        },
+        pdf: {
+            export: "Exportar PDF",
+            downloading: "Generando PDF...",
+            generated: "desde"
         }
     }
 };
