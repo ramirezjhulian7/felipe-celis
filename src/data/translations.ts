@@ -23,6 +23,22 @@ export const translations = {
             innovativeCourse: "Innovative Coursework",
             awards: "Awards & Honors"
         },
+        nav: {
+            about: "About",
+            research: "Research",
+            teaching: "Teaching",
+            contact: "Contact",
+            backToTop: "Back to Top"
+        },
+        research: {
+            title: "Research & Publications",
+            thesis: "Master's Thesis",
+            researchAreas: "Research Areas",
+            conferencePresentations: "Conference Presentations",
+            publications: "Publications",
+            worksInProgress: "Works in Progress",
+            downloadCV: "Download CV"
+        },
         contact: {
             title: "Get in Touch",
             description: "I am available for academic collaborations, lectures, and musical performances. Feel free to reach out to discuss opportunities.",
@@ -56,6 +72,22 @@ export const translations = {
             signatureAssignments: "Trabajos Distintivos",
             innovativeCourse: "Curso Innovador",
             awards: "Premios y Honores"
+        },
+        nav: {
+            about: "Sobre Mí",
+            research: "Investigación",
+            teaching: "Docencia",
+            contact: "Contacto",
+            backToTop: "Volver Arriba"
+        },
+        research: {
+            title: "Investigación y Publicaciones",
+            thesis: "Tesis de Maestría",
+            researchAreas: "Áreas de Investigación",
+            conferencePresentations: "Presentaciones en Conferencias",
+            publications: "Publicaciones",
+            worksInProgress: "Trabajos en Progreso",
+            downloadCV: "Descargar CV"
         },
         contact: {
             title: "Contacto",
@@ -229,7 +261,38 @@ export const contentTranslations = {
                 title: "Beatmaking",
                 description: "Contemplative practice referencing memory and identity using DAWs to create beats accompanying lyrics."
             }
-        ]
+        ],
+        research: {
+            thesis: {
+                title: "HipHop in Medellín: Rejecting Labels",
+                institution: "Texas Tech University",
+                year: "2025",
+                type: "Master's Thesis",
+                abstract: "This thesis explores the hip-hop scene in Medellín, Colombia, examining how artists navigate and resist imposed labels and categories. Through ethnographic research and postcolonial analysis, this work challenges traditional Western musicological frameworks and centers the voices of Medellín's hip-hop community."
+            },
+            researchAreas: [
+                "Postcolonial Musicology",
+                "Hip-Hop Studies",
+                "Latin American Music",
+                "Music and Globalization",
+                "Decolonizing Music Education",
+                "Colombian Popular Music"
+            ],
+            conferencePresentations: [
+                {
+                    title: "Bambuco as a Non-National Symbol",
+                    conference: "39th Annual Research & Creative Activities Forum (RCAF)",
+                    location: "University of Missouri",
+                    year: "2023",
+                    abstract: "This presentation examines how the bambuco, traditionally considered Colombia's national music, functions as a contested symbol that challenges nationalist narratives and reveals transnational musical connections."
+                }
+            ],
+            publications: [],
+            worksInProgress: [
+                "Decolonizing the Music History Curriculum",
+                "Hip-Hop Pedagogy in Higher Education"
+            ]
+        }
     },
     es: {
         personalInfo: {
@@ -389,6 +452,37 @@ export const contentTranslations = {
                 title: "Creación de Beats",
                 description: "Práctica contemplativa que hace referencia a la memoria e identidad usando DAWs para crear beats que acompañen letras."
             }
-        ]
+        ],
+        research: {
+            thesis: {
+                title: "HipHop en Medellín: Rechazando Etiquetas",
+                institution: "Texas Tech University",
+                year: "2025",
+                type: "Tesis de Maestría",
+                abstract: "Esta tesis explora la escena del hip-hop en Medellín, Colombia, examinando cómo los artistas navegan y resisten las etiquetas y categorías impuestas. A través de investigación etnográfica y análisis poscolonial, este trabajo desafía los marcos musicológicos occidentales tradicionales y centra las voces de la comunidad hip-hop de Medellín."
+            },
+            researchAreas: [
+                "Musicología Poscolonial",
+                "Estudios de Hip-Hop",
+                "Música Latinoamericana",
+                "Música y Globalización",
+                "Descolonización de la Educación Musical",
+                "Música Popular Colombiana"
+            ],
+            conferencePresentations: [
+                {
+                    title: "Bambuco como Símbolo No-Nacional",
+                    conference: "39° Foro Anual de Investigación y Actividades Creativas (RCAF)",
+                    location: "University of Missouri",
+                    year: "2023",
+                    abstract: "Esta presentación examina cómo el bambuco, tradicionalmente considerado la música nacional de Colombia, funciona como un símbolo disputado que desafía las narrativas nacionalistas y revela conexiones musicales transnacionales."
+                }
+            ],
+            publications: [],
+            worksInProgress: [
+                "Descolonizando el Currículo de Historia de la Música",
+                "Pedagogía del Hip-Hop en Educación Superior"
+            ]
+        }
     }
 };

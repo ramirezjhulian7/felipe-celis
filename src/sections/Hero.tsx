@@ -91,7 +91,7 @@ const Hero = () => {
             className="flex gap-4 justify-center flex-wrap"
           >
             <a
-              href="#teaching"
+              href="#research"
               className="px-6 md:px-8 py-3 bg-gradient-to-r from-accent to-accent-light text-primary font-bold rounded-full hover:shadow-lg hover:shadow-accent/50 transition-all duration-300 hover:scale-105 text-sm md:text-base"
             >
               {t.viewPortfolio}
